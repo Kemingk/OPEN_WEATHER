@@ -6,14 +6,10 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-key = os.getenv("OPENAI_API_KEY")
-print("你的 key 是：", repr(key))
-print("长度：", len(key) if key else "没找到")
-
 api_key = os.getenv("OPENAI_API_KEY")
 
 if not api_key:
-    raise ValueError("没有找到 OPENAI_API_KEY，请先在系统里设置环境变量。")
+    raise ValueError("not found OPENAI_API_KEY")
 
 client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY"), ###你的_Duke_LiteLLM_API_KEY
